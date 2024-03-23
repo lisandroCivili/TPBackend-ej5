@@ -6,6 +6,7 @@ import routerRecetas from './src/routes/recetas.routes.js'
 import urlencoded  from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import './src/database/database.js'
 
 
 const app = express()
