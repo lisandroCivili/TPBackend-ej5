@@ -1,5 +1,5 @@
 import Receta from "../database/models/receta.js"
-import { validationResult } from "express-validator"
+
 
 
 export const listarRecetas = async(req,res)=>{
@@ -17,10 +17,6 @@ export const listarRecetas = async(req,res)=>{
 export const crearReceta = async(req, res)=>{
     try {
 
-        const errors = validationResult(req)
-        if (!errors.isEmpty()) {
-            return res.status(400).json({errors: errors.array()})
-        }
         const recetaNueva = new Receta(req.body)
         await recetaNueva.save()
         res.status(201).json({
