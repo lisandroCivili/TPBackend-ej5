@@ -1,5 +1,7 @@
 import Receta from "../database/models/receta.js"
 
+
+
 export const listarRecetas = async(req,res)=>{
     try {
         const recetas = await Receta.find()
@@ -14,6 +16,7 @@ export const listarRecetas = async(req,res)=>{
 
 export const crearReceta = async(req, res)=>{
     try {
+
         const recetaNueva = new Receta(req.body)
         await recetaNueva.save()
         res.status(201).json({
